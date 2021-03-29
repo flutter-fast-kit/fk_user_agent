@@ -1,0 +1,22 @@
+name: Build Checks
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./example
+    steps:
+      - uses: actions/checkout@v2
+      - name: Flutter action
+        uses: subosito/flutter-action@v1.4.0
+        with:
+          channel: stable
+      - name: flutter analyze
+        run: flutter analyze
