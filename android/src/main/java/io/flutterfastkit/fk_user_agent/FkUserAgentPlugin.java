@@ -34,6 +34,7 @@ public class FkUserAgentPlugin implements FlutterPlugin, MethodCallHandler {
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "fk_user_agent");
         channel.setMethodCallHandler(this);
+        applicationContext = flutterPluginBinding.getApplicationContext();
     }
 
     @Override
