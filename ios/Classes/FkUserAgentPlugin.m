@@ -194,7 +194,7 @@
           @"darwinVersion": darwinVersion,
           @"cfnetworkVersion": cfnVersion,
           @"deviceName": deviceName,
-          @"packageUserAgent": [NSString stringWithFormat:@"%@/%@.%@ %@)", appName, appVersion, buildNumber, userAgent],
+          @"packageUserAgent": [NSString stringWithFormat:@"%@/%@.%@ %@", appName, appVersion, buildNumber, userAgent],
           @"userAgent": userAgent,
           @"webViewUserAgent": webViewUserAgent ?: [NSNull null]
         });
