@@ -38,13 +38,13 @@
     uname(&systemInfo);
 
     NSString* deviceIdentifier = [NSString stringWithUTF8String:systemInfo.machine];
-
-    if ([deviceIdentifier isEqualToString:@"i386"] || [deviceIdentifier isEqualToString:@"x86_64"]) {
+    
+    #if TARGET_IPHONE_SIMULATOR
         deviceIdentifier = [NSString stringWithFormat:@"%s", getenv("SIMULATOR_MODEL_IDENTIFIER")];
         self.isEmulator = YES;
-    } else {
+    #else
         self.isEmulator = NO;
-    }
+    #endif
 
     static NSDictionary* deviceNames = nil;
 
