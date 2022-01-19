@@ -1,3 +1,6 @@
+# 2.1.0
+* fix: #4
+
 ## 2.0.1
 
 * 修复Android未获取context
