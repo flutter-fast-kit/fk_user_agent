@@ -78,7 +78,10 @@ public class FkUserAgentPlugin implements FlutterPlugin, MethodCallHandler {
         constants.put("shortPackageName", shortPackageName);
         constants.put("applicationName", applicationName);
         constants.put("applicationVersion", applicationVersion);
+        // Legacy: Older versions of this plugin only exported applicationBuildNumber
         constants.put("applicationBuildNumber", buildNumber);
+        // Set buildNumber to match iOS
+        constants.put("buildNumber", buildNumber);
         constants.put("packageUserAgent", packageUserAgent);
         constants.put("userAgent", userAgent);
         constants.put("webViewUserAgent", getWebViewUserAgent());
